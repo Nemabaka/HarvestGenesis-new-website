@@ -18,144 +18,146 @@
     .nav-link.active { font-weight:600; }
     .footer a { text-decoration:none; }
   </style>
-  
 </head>
 
 <body>
-    <!-- HERO with video background -->
-<section class="hero" style="position:relative; min-height:100vh; overflow:hidden;">
-  <video
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="metadata"
-    poster="images/hero-poster.jpg"
-    style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
-    <source src="videos/video.mp4" type="video/mp4">
-    <!-- Fallback text -->
-    Your browser does not support the video tag.
-  </video>
+  <!-- HERO with video background -->
+  <section class="hero" style="position:relative; min-height:100vh; overflow:hidden;">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="images/hero-poster.jpg"
+      style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+      <source src="videos/video.mp4" type="video/mp4">
+      <!-- Fallback text -->
+      Your browser does not support the video tag.
+    </video>
 
-  <!-- dark overlay to improve text contrast -->
-  <div style="position:absolute; inset:0; background:rgba(0,0,0,.55);"></div>
+    <!-- dark overlay to improve text contrast -->
+    <div class="hg-hero-overlay"></div>
 
-  <!-- content on top -->
-  <div class="container" style="position:relative; z-index:2; color:#fff; text-align:center; top:50%; transform:translateY(-50%);">
-    <img src="images/logo.png" alt="HarvestGENESIS logo" style="max-width:180px; margin-bottom:16px;">
-    <h1 class="display-5 fw-bold">Empowering Careers. Building Futures.</h1>
-    <p class="lead">CVs, branding, and career support that open doors.</p>
-    <a href="services.html" class="btn btn-primary btn-lg me-2">Explore Services</a>
-    <a href="contact.html" class="btn btn-outline-light btn-lg">Contact Us</a>
-  </div>
-</section>
-
-
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="WhatsApp Image 2025-08-10 at 18.47.34_3abfa202" alt="HarvestGENESIS" style="height:36px" onerror="this.style.display='none'">
-      <span class="ms-2 logo-text">HarvestGenesis</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navHG">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navHG">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-        <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        <li class="nav-item ms-lg-2"><a class="btn btn-primary" href="register.html">Get Started</a></li>
-      </ul>
+    <!-- content on top -->
+    <div class="container hg-hero-content">
+      <img src="images/logo.png" alt="HarvestGENESIS logo" style="max-width:180px; margin-bottom:16px;">
+      <h1 class="display-5 fw-bold">Empowering Careers. Building Futures.</h1>
+      <p class="lead">CVs, branding, and career support that open doors.</p>
+      <a href="services.html" class="btn btn-primary btn-lg me-2">Explore Services</a>
+      <a href="contact.html" class="btn btn-outline-light btn-lg">Contact Us</a>
     </div>
-  </div>
-</nav>
+  </section>
 
-<!-- Quick Features -->
-<section class="py-5">
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-md-4 text-center">
-        <div class="p-4 h-100 border rounded-4">
-          <div class="feature-icon mb-3"><i class="bi bi-file-earmark-person-fill"></i></div>
-          <h5>Job-Ready Resumes</h5>
-          <p>ATS-friendly documents tailored to your target role and industry.</p>
-        </div>
-      </div>
-      <div class="col-md-4 text-center">
-        <div class="p-4 h-100 border rounded-4">
-          <div class="feature-icon mb-3"><i class="bi bi-palette-fill"></i></div>
-          <h5>Impactful Branding</h5>
-          <p>Logos, flyers, posters and websites designed to impress.</p>
-        </div>
-      </div>
-      <div class="col-md-4 text-center">
-        <div class="p-4 h-100 border rounded-4">
-          <div class="feature-icon mb-3"><i class="bi bi-mortarboard-fill"></i></div>
-          <h5>Career & Academic Boost</h5>
-          <p>Applications, proofreading, and interview prep that set you apart.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Testimonials -->
-<section class="py-5 bg-light">
-  <div class="container">
-    <div class="section-title">
-      <h2>Trusted by Growing Professionals</h2>
-      <p class="text-muted">Real results. Real impact.</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-4"><div class="p-4 bg-white rounded-4 h-100 shadow-sm"><p class="mb-1">"They rebuilt my CV and I got interview callbacks within a week."</p><small class="text-muted">— Lerato M.</small></div></div>
-      <div class="col-md-4"><div class="p-4 bg-white rounded-4 h-100 shadow-sm"><p class="mb-1">"Our new logo and website gave us a professional presence."</p><small class="text-muted">— OpenQuantify Client</small></div></div>
-      <div class="col-md-4"><div class="p-4 bg-white rounded-4 h-100 shadow-sm"><p class="mb-1">"Fast, friendly, and polished. Highly recommended."</p><small class="text-muted">— Thabo K.</small></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="py-5 text-center bg-primary text-white">
-  <div class="container">
-    <h3 class="mb-2">Ready to transform your career?</h3>
-    <p class="mb-4">Let’s craft the tools that take you further.</p>
-    <a href="pricing.html" class="btn btn-light btn-lg me-2">View Pricing</a>
-    <a href="contact.html" class="btn btn-outline-light btn-lg">Talk to Us</a>
-  </div>
-</section>
-
-<footer class="footer bg-dark text-white mt-5">
-  <div class="container py-5">
-    <div class="row g-4">
-      <div class="col-md-4">
-        <h5>HarvestGENESIS</h5>
-        <p class="mb-0">Empowering Careers. Building Futures.</p>
-      </div>
-      <div class="col-md-4">
-        <h6>Contact</h6>
-        <ul class="list-unstyled">
-          <li>📍 Randburg, Fairlands, Smit Street, Alicha Heights</li>
-          <li>📞 072 690 7940</li>
-          <li>✉️ khanonemabaka2@gmail.com</li>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" alt="HarvestGENESIS" style="height:36px" onerror="this.style.display='none'">
+        <span class="ms-2 logo-text">HarvestGenesis</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navHG">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navHG">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-primary" href="register.html">Get Started</a></li>
         </ul>
       </div>
-      <div class="col-md-4">
-        <h6>Follow</h6>
-        <a class="text-white me-3" href="#"><i class="bi bi-facebook"></i></a>
-        <a class="text-white me-3" href="#"><i class="bi bi-instagram"></i></a>
-        <a class="text-white" href="#"><i class="bi bi-whatsapp"></i></a>
+    </div>
+  </nav>
+
+  <!-- Quick Features -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4 text-center">
+          <div class="p-4 h-100 border rounded-4">
+            <div class="feature-icon mb-3"><i class="bi bi-file-earmark-person-fill"></i></div>
+            <h5>Job-Ready Resumes</h5>
+            <p>ATS-friendly documents tailored to your target role and industry.</p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="p-4 h-100 border rounded-4">
+            <div class="feature-icon mb-3"><i class="bi bi-palette-fill"></i></div>
+            <h5>Impactful Branding</h5>
+            <p>Logos, flyers, posters and websites designed to impress.</p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="p-4 h-100 border rounded-4">
+            <div class="feature-icon mb-3"><i class="bi bi-mortarboard-fill"></i></div>
+            <h5>Career & Academic Boost</h5>
+            <p>Applications, proofreading, and interview prep that set you apart.</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="text-center pt-3 border-top border-secondary mt-3">
-      <small>© 2025 HarvestGENESIS. All rights reserved.</small>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="section-title">
+        <h2>Trusted by Growing Professionals</h2>
+        <p class="text-muted">Real results. Real impact.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4"><div class="p-4 bg-white rounded-4 h-100 shadow-sm"><p class="mb-1">"They rebuilt my CV and I got interview callbacks within a week."</p><small class="text-muted">— Lerato M.</small></div></div>
+        <div class="col-md-4"><div class="p-4 bg-white rounded-4 h-100 shadow-sm"><p class="mb-1">"Our new logo and website gave us a professional presence."</p><small class="text-muted">— OpenQuantify Client</small></div></div>
+        <div class="col-md-4"><div class="p-4 bg-white rounded-4 h-100 shadow-sm"><p class="mb-1">"Fast, friendly, and polished. Highly recommended."</p><small class="text-muted">— Thabo K.</small></div></div>
+      </div>
     </div>
-  </div>
-</footer>
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-5 text-center bg-primary text-white">
+    <div class="container">
+      <h3 class="mb-2">Ready to transform your career?</h3>
+      <p class="mb-4">Let’s craft the tools that take you further.</p>
+      <a href="pricing.html" class="btn btn-light btn-lg me-2">View Pricing</a>
+      <a href="contact.html" class="btn btn-outline-light btn-lg">Talk to Us</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-dark text-white mt-5">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5>HarvestGENESIS</h5>
+          <p class="mb-0">Empowering Careers. Building Futures.</p>
+        </div>
+        <div class="col-md-4">
+          <h6>Contact</h6>
+          <ul class="list-unstyled">
+            <li>📍 Randburg, Fairlands, Smit Street, Alicha Heights</li>
+            <li>📞 072 690 7940</li>
+            <li>✉️ khanonemabaka2@gmail.com</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6>Follow</h6>
+          <a class="text-white me-3" href="#"><i class="bi bi-facebook"></i></a>
+          <a class="text-white me-3" href="#"><i class="bi bi-instagram"></i></a>
+          <a class="text-white" href="#"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="text-center pt-3 border-top border-secondary mt-3">
+        <small>© 2025 HarvestGENESIS. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
