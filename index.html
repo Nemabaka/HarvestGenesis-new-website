@@ -21,6 +21,34 @@
 </head>
 
 <body>
+  <!-- HERO with video background -->
+<section class="hero" style="position:relative; min-height:100vh; overflow:hidden;">
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    poster="images/hero-poster.jpg"
+    style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+    <source src="videos/video.mp4" type="video/mp4">
+    <!-- Fallback text -->
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- dark overlay to improve text contrast -->
+  <div style="position:absolute; inset:0; background:rgba(0,0,0,.55);"></div>
+
+  <!-- content on top -->
+  <div class="container" style="position:relative; z-index:2; color:#fff; text-align:center; top:50%; transform:translateY(-50%);">
+    <img src="images/logo.png" alt="HarvestGENESIS logo" style="max-width:180px; margin-bottom:16px;">
+    <h1 class="display-5 fw-bold">Empowering Careers. Building Futures.</h1>
+    <p class="lead">CVs, branding, and career support that open doors.</p>
+    <a href="services.html" class="btn btn-primary btn-lg me-2">Explore Services</a>
+    <a href="contact.html" class="btn btn-outline-light btn-lg">Contact Us</a>
+  </div>
+</section>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="index.html">
