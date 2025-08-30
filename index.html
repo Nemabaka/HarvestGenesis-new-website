@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home | HarvestGenesis</title>
 
-  <!-- Vendor CSS (keep your existing files) -->
+  <!-- Vendor CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/bootstrap-icons.css" />
   <link rel="stylesheet" href="css/tooplate-kool-form-pack.css" />
@@ -17,22 +17,28 @@
       --hg-light:#fff;
     }
 
-    /* Fixed navbar & spacing */
     body{ padding-top:72px; }
-    .navbar.fixed-top{ box-shadow:0 8px 24px rgba(0,0,0,.08); }
 
-    /* Brand in navbar */
+    /* Navbar */
+    .navbar{
+      background:var(--hg-primary) !important;
+    }
+    .navbar .nav-link{
+      color:var(--hg-light) !important;
+    }
+    .navbar .nav-link:hover,
+    .navbar .nav-link.active{
+      text-decoration:underline;
+      font-weight:600;
+    }
     .navbar-brand{ display:flex; align-items:center; gap:.5rem; }
-    .navbar-brand img{ height:40px; width:auto; display:block; }
-    .logo-text{ font-weight:800; letter-spacing:.3px; line-height:1; }
-
-    /* Active nav link weight */
-    .nav-link.active{ font-weight:600; }
+    .navbar-brand img{ height:40px; width:auto; }
+    .logo-text{ font-weight:800; letter-spacing:.3px; color:var(--hg-light); }
 
     /* Hero */
     .hero{
       position:relative;
-      background:var(--hg-primary);
+      background:var(--hg-dark);
       color:var(--hg-light);
       min-height:calc(100vh - 72px);
       display:flex;
@@ -43,44 +49,51 @@
     }
     .hero h1{ font-weight:800; letter-spacing:.4px; margin-bottom:.6rem; }
     .hero .lead{
-      color:var(--hg-light) !important; /* make sure it’s white, not gray */
+      color:var(--hg-light) !important;
       opacity:1; 
       font-size:1.1rem;
       margin-bottom:1.25rem;
     }
-    .hero .btn{ margin:.25rem .35rem; }
+
+    /* Section backgrounds */
+    section.turquoise{
+      background:var(--hg-primary);
+      color:var(--hg-light);
+    }
 
     /* Section titles */
-    .section-title{ text-align:center; margin-bottom:2rem; }
+    .section-title h2{ color:var(--hg-light); }
 
     /* Feature cards */
-    .card-soft{ border-radius:1rem; box-shadow:0 10px 30px rgba(0,0,0,.06); }
+    .card-soft{ 
+      border-radius:1rem; 
+      box-shadow:0 10px 30px rgba(0,0,0,.06); 
+      background:var(--hg-light);
+      color:var(--hg-dark);
+    }
     .feature-icon{ font-size:2rem; color:var(--hg-primary); }
 
     /* CTA */
-    .cta{ background:#111; color:#fff; }
+    .cta{ background:var(--hg-primary); color:var(--hg-light); }
 
     /* Footer */
-    .footer{ background:#111; color:#fff; }
+    .footer{ background:var(--hg-dark); color:var(--hg-light); }
     .footer a{ color:#fff; text-decoration:none; }
     .footer a:hover{ text-decoration:underline; }
-
-    /* Utilities */
-    .rounded-xxl{ border-radius:1.25rem; }
   </style>
 </head>
 
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">
         <img src="images/logo.png" alt="HarvestGenesis logo" onerror="this.style.display='none'">
         <span class="logo-text">HarvestGenesis</span>
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navHG" aria-controls="navHG" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navHG">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -92,13 +105,13 @@
           <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item ms-lg-2"><a class="btn btn-primary" href="register.html">Get Started</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-light" href="register.html">Get Started</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- HERO (no video) -->
+  <!-- HERO -->
   <section class="hero">
     <div class="container">
       <h1 class="display-5">Building Trust. Creating Futures.</h1>
@@ -113,7 +126,7 @@
   </section>
 
   <!-- WHAT WE OFFER -->
-  <section class="py-5">
+  <section class="py-5 turquoise">
     <div class="container">
       <div class="section-title">
         <h2 class="mb-0">What We Offer</h2>
@@ -121,7 +134,7 @@
 
       <div class="row g-4">
         <div class="col-md-6 col-lg-3">
-          <div class="p-4 h-100 border rounded-xxl card-soft text-center">
+          <div class="p-4 h-100 card-soft text-center">
             <div class="feature-icon mb-3"><i class="bi bi-file-earmark-person-fill"></i></div>
             <h5 class="mb-1">Job-Ready Resumes</h5>
             <p class="mb-0">ATS-friendly CVs & cover letters tailored to your target roles.</p>
@@ -129,7 +142,7 @@
         </div>
 
         <div class="col-md-6 col-lg-3">
-          <div class="p-4 h-100 border rounded-xxl card-soft text-center">
+          <div class="p-4 h-100 card-soft text-center">
             <div class="feature-icon mb-3"><i class="bi bi-palette-fill"></i></div>
             <h5 class="mb-1">Branding & Design</h5>
             <p class="mb-0">Logos, flyers, posters, and web design that stand out.</p>
@@ -137,7 +150,7 @@
         </div>
 
         <div class="col-md-6 col-lg-3">
-          <div class="p-4 h-100 border rounded-xxl card-soft text-center">
+          <div class="p-4 h-100 card-soft text-center">
             <div class="feature-icon mb-3"><i class="bi bi-mortarboard-fill"></i></div>
             <h5 class="mb-1">Career & Academic Boost</h5>
             <p class="mb-0">Applications, proofreading, and interview preparation.</p>
@@ -145,7 +158,7 @@
         </div>
 
         <div class="col-md-6 col-lg-3">
-          <div class="p-4 h-100 border rounded-xxl card-soft text-center">
+          <div class="p-4 h-100 card-soft text-center">
             <div class="feature-icon mb-3"><i class="bi bi-bag-heart-fill"></i></div>
             <h5 class="mb-1">Faith-Inspired Shirt Brands</h5>
             <p class="mb-0">“70 Times 7” & “2 Fishes & 5 Loaves” — wear your values proudly.</p>
@@ -154,7 +167,7 @@
       </div>
 
       <div class="text-center mt-4">
-        <a href="shirts.html" class="btn btn-primary btn-lg">Browse Shirt Collections</a>
+        <a href="shirts.html" class="btn btn-light btn-lg">Browse Shirt Collections</a>
       </div>
     </div>
   </section>
@@ -164,12 +177,12 @@
     <div class="container">
       <h3 class="mb-2">Ready to talk to us?</h3>
       <p class="mb-4">We’re here to help—whether it’s careers, branding, or apparel.</p>
-      <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
+      <a href="contact.html" class="btn btn-light btn-lg">Contact Us</a>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer mt-0">
+  <footer class="footer">
     <div class="container py-5">
       <div class="row g-4">
         <div class="col-md-4">
@@ -197,11 +210,12 @@
     </div>
   </footer>
 
-  <!-- Vendor JS (keep your existing files) -->
+  <!-- JS -->
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
