@@ -3,58 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | HarvestGenesis</title>
+  <title>Home | HarvestGENESIS</title>
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/bootstrap-icons.css" />
   <link rel="stylesheet" href="css/tooplate-kool-form-pack.css" />
   <style>
-    .hg-hero-overlay { position:absolute; inset:0; background:rgba(0,0,0,.55); }
-    .hg-hero-content { position:relative; z-index:2; color:#fff; text-align:center; top:50%; transform:translateY(-50%); }
-    .hg-hero h1 { font-weight:800; letter-spacing:.5px; }
-    .section-title { text-align:center; margin-bottom:2.2rem; }
-    .feature-icon { font-size:2.5rem; }
-    .price-card { border-radius:1rem; box-shadow:0 10px 30px rgba(0,0,0,.08); }
-    .logo-text { font-weight:800; font-size:1.1rem; letter-spacing:.3px; }
-    .nav-link.active { font-weight:600; }
-    .footer a { text-decoration:none; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+    /* Navbar */
+    .navbar {
+      background-color: #0097b2 !important;
+    }
+    .navbar .nav-link, .navbar .logo-text {
+      color: #fff !important;
+    }
+    .navbar .nav-link.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    .btn-primary {
+      background-color: #0097b2;
+      border-color: #0097b2;
+    }
+    .btn-primary:hover {
+      background-color: #007a8f;
+      border-color: #007a8f;
+    }
+    /* Hero Section */
+    .hero {
+      background-color: #0097b2;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+    .hero img {
+      max-width: 220px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+    /* Features */
+    .feature-icon {
+      font-size: 2.5rem;
+      color: #0097b2;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    /* Footer */
+    footer {
+      background-color: #0097b2;
+      color: white;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
 <body>
-  <!-- HERO with video background -->
-  <section class="hero" style="position:relative; min-height:100vh; overflow:hidden;">
-    <video
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="metadata"
-      poster="images/hero-poster.jpg"
-      style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
-      <source src="videos/video.mp4" type="video/mp4">
-      <!-- Fallback text -->
-      Your browser does not support the video tag.
-    </video>
-
-    <!-- dark overlay to improve text contrast -->
-    <div class="hg-hero-overlay"></div>
-
-    <!-- content on top -->
-    <div class="container hg-hero-content">
-      <img src="images/logo.png" alt="HarvestGENESIS logo" style="max-width:180px; margin-bottom:16px;">
-      <h1 class="display-5 fw-bold">Empowering Careers. Building Futures.</h1>
-      <p class="lead">CVs, branding, and career support that open doors.</p>
-      <a href="services.html" class="btn btn-primary btn-lg me-2">Explore Services</a>
-      <a href="contact.html" class="btn btn-outline-light btn-lg">Contact Us</a>
-    </div>
-  </section>
-
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <nav class="navbar navbar-expand-lg shadow-sm fixed-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="images/logo.png" alt="HarvestGENESIS" style="height:36px" onerror="this.style.display='none'">
-        <span class="ms-2 logo-text">HarvestGenesis</span>
+        <img src="images/harvest-genesis-logo.png" alt="HarvestGENESIS" style="height:40px;">
+        <span class="ms-2 logo-text">HarvestGENESIS</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navHG">
         <span class="navbar-toggler-icon"></span>
@@ -67,15 +99,29 @@
           <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item ms-lg-2"><a class="btn btn-primary" href="register.html">Get Started</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-light" href="register.html">Get Started</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Quick Features -->
+  <!-- HERO -->
+  <section class="hero">
+    <img src="images/harvest-genesis-logo.png" alt="HarvestGENESIS Logo">
+    <h1>Empowering Careers. Building Futures.</h1>
+    <p>CVs, branding, and career support that open doors.</p>
+    <div>
+      <a href="services.html" class="btn btn-light btn-lg me-2">Explore Services</a>
+      <a href="contact.html" class="btn btn-dark btn-lg">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
   <section class="py-5">
     <div class="container">
+      <div class="section-title">
+        <h2>What We Offer</h2>
+      </div>
       <div class="row g-4">
         <div class="col-md-4 text-center">
           <div class="p-4 h-100 border rounded-4">
@@ -102,34 +148,19 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <div class="section-title">
-        <h2>Trusted by Growing Professionals</h2>
-        <p class="text-muted">Real results. Real impact.</p>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-4"><div class="p-4 bg-white rounded-4 h-100 shadow-sm"><p class="mb-1">"They rebuilt my CV and I got interview callbacks within a week."</p><small class="text-muted">— Lerato M.</small></div></div>
-        <div class="col-md-4"><div class="p-4 bg-white rounded-4 h-100 shadow-sm"><p class="mb-1">"Our new logo and website gave us a professional presence."</p><small class="text-muted">— OpenQuantify Client</small></div></div>
-        <div class="col-md-4"><div class="p-4 bg-white rounded-4 h-100 shadow-sm"><p class="mb-1">"Fast, friendly, and polished. Highly recommended."</p><small class="text-muted">— Thabo K.</small></div></div>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA -->
-  <section class="py-5 text-center bg-primary text-white">
+  <section class="py-5 text-center bg-dark text-white">
     <div class="container">
       <h3 class="mb-2">Ready to transform your career?</h3>
       <p class="mb-4">Let’s craft the tools that take you further.</p>
-      <a href="pricing.html" class="btn btn-light btn-lg me-2">View Pricing</a>
-      <a href="contact.html" class="btn btn-outline-light btn-lg">Talk to Us</a>
+      <a href="pricing.html" class="btn btn-primary btn-lg me-2">View Pricing</a>
+      <a href="contact.html" class="btn btn-light btn-lg">Talk to Us</a>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer bg-dark text-white mt-5">
-    <div class="container py-5">
+  <!-- FOOTER -->
+  <footer class="py-4">
+    <div class="container">
       <div class="row g-4">
         <div class="col-md-4">
           <h5>HarvestGENESIS</h5>
@@ -150,7 +181,7 @@
           <a class="text-white" href="#"><i class="bi bi-whatsapp"></i></a>
         </div>
       </div>
-      <div class="text-center pt-3 border-top border-secondary mt-3">
+      <div class="text-center pt-3 border-top border-light mt-3">
         <small>© 2025 HarvestGENESIS. All rights reserved.</small>
       </div>
     </div>
@@ -160,4 +191,5 @@
   <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
