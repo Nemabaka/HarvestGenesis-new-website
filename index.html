@@ -3,94 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | HarvestGENESIS</title>
+  <title>Home | HarvestGenesis</title>
+
+  <!-- Vendor CSS (keep your existing files) -->
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/bootstrap-icons.css" />
   <link rel="stylesheet" href="css/tooplate-kool-form-pack.css" />
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-      color: #000;
+    :root{
+      --hg-primary:#0097b2; /* dark turquoise */
+      --hg-dark:#000;
+      --hg-light:#fff;
     }
-    /* Navbar */
-    .navbar {
-      background-color: #0097b2 !important;
+
+    /* Fixed navbar & spacing */
+    body{ padding-top:72px; }
+    .navbar.fixed-top{ box-shadow:0 8px 24px rgba(0,0,0,.08); }
+
+    /* Brand in navbar */
+    .navbar-brand{ display:flex; align-items:center; gap:.5rem; }
+    .navbar-brand img{ height:40px; width:auto; display:block; }
+    .logo-text{ font-weight:800; letter-spacing:.3px; line-height:1; }
+
+    /* Active nav link weight */
+    .nav-link.active{ font-weight:600; }
+
+    /* Hero */
+    .hero{
+      position:relative;
+      background:var(--hg-primary);
+      color:var(--hg-light);
+      min-height:calc(100vh - 72px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:72px 16px;
     }
-    .navbar .nav-link, .navbar .logo-text {
-      color: #fff !important;
+    .hero h1{ font-weight:800; letter-spacing:.4px; margin-bottom:.6rem; }
+    .hero .lead{
+      color:var(--hg-light) !important; /* make sure it’s white, not gray */
+      opacity:1; 
+      font-size:1.1rem;
+      margin-bottom:1.25rem;
     }
-    .navbar .nav-link.active {
-      font-weight: bold;
-      text-decoration: underline;
-    }
-    .btn-primary {
-      background-color: #0097b2;
-      border-color: #0097b2;
-    }
-    .btn-primary:hover {
-      background-color: #007a8f;
-      border-color: #007a8f;
-    }
-    /* Hero Section */
-    .hero {
-      background-color: #0097b2;
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      flex-direction: column;
-      padding: 20px;
-    }
-    .hero img {
-      max-width: 220px;
-      margin-bottom: 20px;
-    }
-    .hero h1 {
-      font-weight: 800;
-      margin-bottom: 15px;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
-    }
-    /* Features */
-    .feature-icon {
-      font-size: 2.5rem;
-      color: #0097b2;
-    }
-    .section-title {
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
+    .hero .btn{ margin:.25rem .35rem; }
+
+    /* Section titles */
+    .section-title{ text-align:center; margin-bottom:2rem; }
+
+    /* Feature cards */
+    .card-soft{ border-radius:1rem; box-shadow:0 10px 30px rgba(0,0,0,.06); }
+    .feature-icon{ font-size:2rem; color:var(--hg-primary); }
+
+    /* CTA */
+    .cta{ background:#111; color:#fff; }
+
     /* Footer */
-    footer {
-      background-color: #0097b2;
-      color: white;
-    }
-    footer a {
-      color: white;
-      text-decoration: none;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
+    .footer{ background:#111; color:#fff; }
+    .footer a{ color:#fff; text-decoration:none; }
+    .footer a:hover{ text-decoration:underline; }
+
+    /* Utilities */
+    .rounded-xxl{ border-radius:1.25rem; }
   </style>
 </head>
 
 <body>
+
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg shadow-sm fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="images/harvest-genesis-logo.png" alt="HarvestGENESIS" style="height:40px;">
-        <span class="ms-2 logo-text">HarvestGENESIS</span>
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="HarvestGenesis logo" onerror="this.style.display='none'">
+        <span class="logo-text">HarvestGenesis</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navHG">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navHG" aria-controls="navHG" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navHG">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
@@ -99,76 +92,93 @@
           <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item ms-lg-2"><a class="btn btn-light" href="register.html">Get Started</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-primary" href="register.html">Get Started</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO (no video) -->
   <section class="hero">
-    <img src="images/harvest-genesis-logo.png" alt="HarvestGENESIS Logo">
-    <h1>Empowering Careers. Building Futures.</h1>
-    <p>CVs, branding, and career support that open doors.</p>
-    <div>
-      <a href="services.html" class="btn btn-light btn-lg me-2">Explore Services</a>
-      <a href="contact.html" class="btn btn-dark btn-lg">Contact Us</a>
+    <div class="container">
+      <h1 class="display-5">Building Trust. Creating Futures.</h1>
+      <p class="lead">
+        From career services to branded apparel, HarvestGENESIS is your trusted partner for what’s next.
+      </p>
+      <div class="mt-2">
+        <a href="services.html" class="btn btn-light btn-lg">Explore Career Services</a>
+        <a href="shirts.html" class="btn btn-outline-light btn-lg">Explore Shirt Brands</a>
+      </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
+  <!-- WHAT WE OFFER -->
   <section class="py-5">
     <div class="container">
       <div class="section-title">
-        <h2>What We Offer</h2>
+        <h2 class="mb-0">What We Offer</h2>
       </div>
+
       <div class="row g-4">
-        <div class="col-md-4 text-center">
-          <div class="p-4 h-100 border rounded-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 h-100 border rounded-xxl card-soft text-center">
             <div class="feature-icon mb-3"><i class="bi bi-file-earmark-person-fill"></i></div>
-            <h5>Job-Ready Resumes</h5>
-            <p>ATS-friendly documents tailored to your target role and industry.</p>
+            <h5 class="mb-1">Job-Ready Resumes</h5>
+            <p class="mb-0">ATS-friendly CVs & cover letters tailored to your target roles.</p>
           </div>
         </div>
-        <div class="col-md-4 text-center">
-          <div class="p-4 h-100 border rounded-4">
+
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 h-100 border rounded-xxl card-soft text-center">
             <div class="feature-icon mb-3"><i class="bi bi-palette-fill"></i></div>
-            <h5>Impactful Branding</h5>
-            <p>Logos, flyers, posters and websites designed to impress.</p>
+            <h5 class="mb-1">Branding & Design</h5>
+            <p class="mb-0">Logos, flyers, posters, and web design that stand out.</p>
           </div>
         </div>
-        <div class="col-md-4 text-center">
-          <div class="p-4 h-100 border rounded-4">
+
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 h-100 border rounded-xxl card-soft text-center">
             <div class="feature-icon mb-3"><i class="bi bi-mortarboard-fill"></i></div>
-            <h5>Career & Academic Boost</h5>
-            <p>Applications, proofreading, and interview prep that set you apart.</p>
+            <h5 class="mb-1">Career & Academic Boost</h5>
+            <p class="mb-0">Applications, proofreading, and interview preparation.</p>
           </div>
         </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="p-4 h-100 border rounded-xxl card-soft text-center">
+            <div class="feature-icon mb-3"><i class="bi bi-bag-heart-fill"></i></div>
+            <h5 class="mb-1">Faith-Inspired Shirt Brands</h5>
+            <p class="mb-0">“70 Times 7” & “2 Fishes & 5 Loaves” — wear your values proudly.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="shirts.html" class="btn btn-primary btn-lg">Browse Shirt Collections</a>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-5 text-center bg-dark text-white">
+  <section class="py-5 cta text-center">
     <div class="container">
-      <h3 class="mb-2">Ready to transform your career?</h3>
-      <p class="mb-4">Let’s craft the tools that take you further.</p>
-      <a href="pricing.html" class="btn btn-primary btn-lg me-2">View Pricing</a>
-      <a href="contact.html" class="btn btn-light btn-lg">Talk to Us</a>
+      <h3 class="mb-2">Ready to talk to us?</h3>
+      <p class="mb-4">We’re here to help—whether it’s careers, branding, or apparel.</p>
+      <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="py-4">
-    <div class="container">
+  <footer class="footer mt-0">
+    <div class="container py-5">
       <div class="row g-4">
         <div class="col-md-4">
-          <h5>HarvestGENESIS</h5>
-          <p class="mb-0">Empowering Careers. Building Futures.</p>
+          <h5>HarvestGenesis</h5>
+          <p class="mb-0">Building Trust. Creating Futures.</p>
         </div>
         <div class="col-md-4">
           <h6>Contact</h6>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled mb-0">
             <li>📍 Randburg, Fairlands, Smit Street, Alicha Heights</li>
             <li>📞 072 690 7940</li>
             <li>✉️ khanonemabaka2@gmail.com</li>
@@ -176,20 +186,22 @@
         </div>
         <div class="col-md-4">
           <h6>Follow</h6>
-          <a class="text-white me-3" href="#"><i class="bi bi-facebook"></i></a>
-          <a class="text-white me-3" href="#"><i class="bi bi-instagram"></i></a>
-          <a class="text-white" href="#"><i class="bi bi-whatsapp"></i></a>
+          <a class="me-3" href="#"><i class="bi bi-facebook"></i></a>
+          <a class="me-3" href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-whatsapp"></i></a>
         </div>
       </div>
-      <div class="text-center pt-3 border-top border-light mt-3">
-        <small>© 2025 HarvestGENESIS. All rights reserved.</small>
+      <div class="text-center pt-3 border-top border-secondary mt-3">
+        <small>© 2025 HarvestGenesis. All rights reserved.</small>
       </div>
     </div>
   </footer>
 
+  <!-- Vendor JS (keep your existing files) -->
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
