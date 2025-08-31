@@ -3,128 +3,164 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | HarvestGENESIS</title>
+  <title>Contact | HarvestGenesis</title>
+
+  <!-- Vendor CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/bootstrap-icons.css" />
   <link rel="stylesheet" href="css/tooplate-kool-form-pack.css" />
+
   <style>
-    .hg-hero-overlay { position:absolute; inset:0; background:rgba(0,0,0,.55); }
-    .hg-hero-content { position:relative; z-index:2; color:#fff; text-align:center; top:50%; transform:translateY(-50%); }
-    .hg-hero h1 { font-weight:800; letter-spacing:.5px; }
-    .section-title { text-align:center; margin-bottom:2.2rem; }
-    .feature-icon { font-size:2.5rem; }
-    .price-card { border-radius:1rem; box-shadow:0 10px 30px rgba(0,0,0,.08); }
-    .logo-text { font-weight:800; font-size:1.1rem; letter-spacing:.3px; }
-    .nav-link.active { font-weight:600; }
-    .footer a { text-decoration:none; }
+    :root{
+      --hg-primary:#0097b2;
+      --hg-dark:#000;
+      --hg-light:#fff;
+    }
+
+    body{ padding-top:72px; background:var(--hg-primary); color:var(--hg-light); }
+
+    /* Navbar */
+    .navbar{ background:var(--hg-primary) !important; }
+    .navbar .nav-link{ color:var(--hg-light) !important; }
+    .navbar .nav-link:hover,
+    .navbar .nav-link.active{ text-decoration:underline; font-weight:600; }
+    .navbar-brand{ display:flex; align-items:center; gap:.5rem; }
+    .navbar-brand img{ height:40px; width:auto; }
+    .logo-text{ font-weight:800; letter-spacing:.3px; color:var(--hg-light); }
+
+    /* Hero */
+    .hero{
+      padding:90px 16px;
+      text-align:center;
+      background:var(--hg-primary);
+      color:var(--hg-light);
+    }
+    .hero h1{ font-weight:800; }
+    .hero p{ font-size:1.1rem; opacity:.95; }
+
+    /* Contact Form Card */
+    .contact-card{
+      border-radius:1rem;
+      background:var(--hg-light);
+      color:var(--hg-dark);
+      padding:2rem;
+      box-shadow:0 8px 25px rgba(0,0,0,.08);
+    }
+    .contact-card h5{ color:var(--hg-primary); }
+
+    /* Footer */
+    .footer{ background:var(--hg-dark); color:var(--hg-light); }
+    .footer a{ color:#fff; text-decoration:none; }
+    .footer a:hover{ text-decoration:underline; }
   </style>
 </head>
-
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="images/logo.png" alt="HarvestGENESIS" style="height:36px" onerror="this.style.display='none'">
-      <span class="ms-2 logo-text">HarvestGENESIS</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navHG">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navHG">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-        <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
-        <li class="nav-item ms-lg-2"><a class="btn btn-primary" href="register.html">Get Started</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
 
-<section class="py-5">
-  <div class="container">
-    <div class="section-title">
-      <h2>Contact Us</h2>
-      <p class="text-muted">Tell us what you need and we’ll get back to you.</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <form class="p-4 border rounded-4 bg-white">
-          <div class="mb-3">
-            <label class="form-label">Name</label>
-            <input type="text" class="form-control" placeholder="Your full name">
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input type="email" class="form-control" placeholder="you@example.com">
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Service</label>
-            <select class="form-select">
-              <option>CV & Resume</option>
-              <option>Branding & Design</option>
-              <option>Website</option>
-              <option>Academic Support</option>
-              <option>Interview Prep</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Message</label>
-            <textarea class="form-control" rows="5" placeholder="How can we help?"></textarea>
-          </div>
-          <button type="button" class="btn btn-primary btn-lg w-100">Send Message</button>
-          <p class="text-muted small mt-2 mb-0">Form is front-end only. Connect to your email or backend to receive messages.</p>
-        </form>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="HarvestGenesis logo" onerror="this.style.display='none'">
+        <span class="logo-text">HarvestGenesis</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navHG">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navHG">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-light" href="register.html">Get Started</a></li>
+        </ul>
       </div>
-      <div class="col-md-6">
-        <div class="p-4 border rounded-4 h-100 bg-white">
-          <h5>Business Details</h5>
-          <ul class="list-unstyled">
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>We’d love to hear from you. Let’s connect today.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="contact-card">
+            <h5>Send us a Message</h5>
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="4" placeholder="Write your message..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="contact-card">
+            <h5>Contact Information</h5>
+            <p><i class="bi bi-geo-alt-fill me-2 text-primary"></i> Randburg, Fairlands, Smit Street, Alicha Heights</p>
+            <p><i class="bi bi-telephone-fill me-2 text-primary"></i> 072 690 7940</p>
+            <p><i class="bi bi-envelope-fill me-2 text-primary"></i> khanonemabaka2@gmail.com</p>
+            <h6>Follow Us</h6>
+            <a class="me-3" href="#"><i class="bi bi-facebook"></i></a>
+            <a class="me-3" href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer mt-5">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5>HarvestGenesis</h5>
+          <p class="mb-0">Building Trust. Creating Futures.</p>
+        </div>
+        <div class="col-md-4">
+          <h6>Contact</h6>
+          <ul class="list-unstyled mb-0">
             <li>📍 Randburg, Fairlands, Smit Street, Alicha Heights</li>
             <li>📞 072 690 7940</li>
             <li>✉️ khanonemabaka2@gmail.com</li>
           </ul>
-          <hr/>
-          <h6>Business Hours</h6>
-          <p class="mb-0">Mon–Sat: 08:00–18:00 • Sun: 10:00–15:00</p>
+        </div>
+        <div class="col-md-4">
+          <h6>Follow</h6>
+          <a class="me-3" href="#"><i class="bi bi-facebook"></i></a>
+          <a class="me-3" href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-whatsapp"></i></a>
         </div>
       </div>
+      <div class="text-center pt-3 border-top border-secondary mt-3">
+        <small>© 2025 HarvestGenesis. All rights reserved.</small>
+      </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<footer class="footer bg-dark text-white mt-5">
-  <div class="container py-5">
-    <div class="row g-4">
-      <div class="col-md-4">
-        <h5>HarvestGENESIS</h5>
-        <p class="mb-0">Empowering Careers. Building Futures.</p>
-      </div>
-      <div class="col-md-4">
-        <h6>Contact</h6>
-        <ul class="list-unstyled">
-          <li>📍 Randburg, Fairlands, Smit Street, Alicha Heights</li>
-          <li>📞 072 690 7940</li>
-          <li>✉️ khanonemabaka2@gmail.com</li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <h6>Follow</h6>
-        <a class="text-white me-3" href="#"><i class="bi bi-facebook"></i></a>
-        <a class="text-white me-3" href="#"><i class="bi bi-instagram"></i></a>
-        <a class="text-white" href="#"><i class="bi bi-whatsapp"></i></a>
-      </div>
-    </div>
-    <div class="text-center pt-3 border-top border-secondary mt-3">
-      <small>© 2025 HarvestGENESIS. All rights reserved.</small>
-    </div>
-  </div>
-</footer>
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
+  <!-- JS -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
