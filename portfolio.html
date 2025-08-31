@@ -3,95 +3,168 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | HarvestGENESIS</title>
+  <title>Portfolio | HarvestGenesis</title>
+
+  <!-- Vendor CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/bootstrap-icons.css" />
   <link rel="stylesheet" href="css/tooplate-kool-form-pack.css" />
+
   <style>
-    .hg-hero-overlay { position:absolute; inset:0; background:rgba(0,0,0,.55); }
-    .hg-hero-content { position:relative; z-index:2; color:#fff; text-align:center; top:50%; transform:translateY(-50%); }
-    .hg-hero h1 { font-weight:800; letter-spacing:.5px; }
-    .section-title { text-align:center; margin-bottom:2.2rem; }
-    .feature-icon { font-size:2.5rem; }
-    .price-card { border-radius:1rem; box-shadow:0 10px 30px rgba(0,0,0,.08); }
-    .logo-text { font-weight:800; font-size:1.1rem; letter-spacing:.3px; }
-    .nav-link.active { font-weight:600; }
-    .footer a { text-decoration:none; }
+    :root{
+      --hg-primary:#0097b2;
+      --hg-dark:#000;
+      --hg-light:#fff;
+    }
+
+    body{ padding-top:72px; background:var(--hg-primary); color:var(--hg-light); }
+
+    /* Navbar */
+    .navbar{ background:var(--hg-primary) !important; }
+    .navbar .nav-link{ color:var(--hg-light) !important; }
+    .navbar .nav-link:hover,
+    .navbar .nav-link.active{ text-decoration:underline; font-weight:600; }
+    .navbar-brand{ display:flex; align-items:center; gap:.5rem; }
+    .navbar-brand img{ height:40px; width:auto; }
+    .logo-text{ font-weight:800; letter-spacing:.3px; color:var(--hg-light); }
+
+    /* Hero */
+    .hero{
+      padding:90px 16px;
+      text-align:center;
+      background:var(--hg-primary);
+      color:var(--hg-light);
+    }
+    .hero h1{ font-weight:800; }
+    .hero p{ font-size:1.1rem; opacity:.95; }
+
+    /* Portfolio cards */
+    .portfolio-card{
+      border-radius:1rem;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+      background:var(--hg-light);
+      color:var(--hg-dark);
+      overflow:hidden;
+      transition:.2s;
+      height:100%;
+    }
+    .portfolio-card:hover{ transform:translateY(-5px); box-shadow:0 14px 35px rgba(0,0,0,.12); }
+    .portfolio-card img{ width:100%; height:200px; object-fit:cover; }
+    .portfolio-card h5{ color:var(--hg-primary); margin-top:1rem; }
+
+    /* Footer */
+    .footer{ background:var(--hg-dark); color:var(--hg-light); }
+    .footer a{ color:#fff; text-decoration:none; }
+    .footer a:hover{ text-decoration:underline; }
   </style>
 </head>
-
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="images/logo.png" alt="HarvestGENESIS" style="height:36px" onerror="this.style.display='none'">
-      <span class="ms-2 logo-text">HarvestGENESIS</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navHG">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navHG">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-        <li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        <li class="nav-item ms-lg-2"><a class="btn btn-primary" href="register.html">Get Started</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
 
-<section class="py-5">
-  <div class="container">
-    <div class="section-title">
-      <h2>Portfolio</h2>
-      <p class="text-muted">A glimpse of our recent work.</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-4"><div class="border rounded-4 p-3 h-100"><h6>CV/Resume Makeovers</h6><p>Before/After (samples on request)</p></div></div>
-      <div class="col-md-4"><div class="border rounded-4 p-3 h-100"><h6>Logos & Branding</h6><p>Clean, modern marks tailored to your brand.</p></div></div>
-      <div class="col-md-4"><div class="border rounded-4 p-3 h-100"><h6>Websites</h6><p>Responsive, fast static sites hosted on GitHub Pages.</p></div></div>
-      <div class="col-md-4"><div class="border rounded-4 p-3 h-100"><h6>Flyers & Posters</h6><p>Eye-catching promotional materials.</p></div></div>
-      <div class="col-md-4"><div class="border rounded-4 p-3 h-100"><h6>Academic Support</h6><p>Proofreading, formatting, and submission guidance.</p></div></div>
-      <div class="col-md-4"><div class="border rounded-4 p-3 h-100"><h6>Interview Coaching</h6><p>Confidence-building practice sessions.</p></div></div>
-    </div>
-    <div class="text-center mt-5">
-      <a href="contact.html" class="btn btn-primary">Request Live Samples</a>
-    </div>
-  </div>
-</section>
-
-<footer class="footer bg-dark text-white mt-5">
-  <div class="container py-5">
-    <div class="row g-4">
-      <div class="col-md-4">
-        <h5>HarvestGENESIS</h5>
-        <p class="mb-0">Empowering Careers. Building Futures.</p>
-      </div>
-      <div class="col-md-4">
-        <h6>Contact</h6>
-        <ul class="list-unstyled">
-          <li>📍 Randburg, Fairlands, Smit Street, Alicha Heights</li>
-          <li>📞 072 690 7940</li>
-          <li>✉️ khanonemabaka2@gmail.com</li>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="HarvestGenesis logo" onerror="this.style.display='none'">
+        <span class="logo-text">HarvestGenesis</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navHG">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navHG">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-light" href="register.html">Get Started</a></li>
         </ul>
       </div>
-      <div class="col-md-4">
-        <h6>Follow</h6>
-        <a class="text-white me-3" href="#"><i class="bi bi-facebook"></i></a>
-        <a class="text-white me-3" href="#"><i class="bi bi-instagram"></i></a>
-        <a class="text-white" href="#"><i class="bi bi-whatsapp"></i></a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Our Portfolio</h1>
+      <p>Showcasing our work — from career services to branded apparel.</p>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO GRID -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Example Career Portfolio -->
+        <div class="col-md-4">
+          <div class="portfolio-card">
+            <img src="images/cv-sample.jpg" alt="CV Design">
+            <div class="p-3">
+              <h5>Professional CV Designs</h5>
+              <p>Modern, ATS-friendly CVs that got clients hired.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example Branding Portfolio -->
+        <div class="col-md-4">
+          <div class="portfolio-card">
+            <img src="images/logo-sample.jpg" alt="Logo Design">
+            <div class="p-3">
+              <h5>Logo & Branding</h5>
+              <p>Unique logos and visuals tailored to businesses.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example Shirt Portfolio -->
+        <div class="col-md-4">
+          <div class="portfolio-card">
+            <img src="images/shirt-sample.jpg" alt="Shirt Design">
+            <div class="p-3">
+              <h5>Faith-Inspired Apparel</h5>
+              <p>70 Times 7 and 2 Fishes & 5 Loaves collections.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-    <div class="text-center pt-3 border-top border-secondary mt-3">
-      <small>© 2025 HarvestGENESIS. All rights reserved.</small>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer mt-5">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5>HarvestGenesis</h5>
+          <p class="mb-0">Building Trust. Creating Futures.</p>
+        </div>
+        <div class="col-md-4">
+          <h6>Contact</h6>
+          <ul class="list-unstyled mb-0">
+            <li>📍 Randburg, Fairlands, Smit Street, Alicha Heights</li>
+            <li>📞 072 690 7940</li>
+            <li>✉️ khanonemabaka2@gmail.com</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6>Follow</h6>
+          <a class="me-3" href="#"><i class="bi bi-facebook"></i></a>
+          <a class="me-3" href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="text-center pt-3 border-top border-secondary mt-3">
+        <small>© 2025 HarvestGenesis. All rights reserved.</small>
+      </div>
     </div>
-  </div>
-</footer>
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
