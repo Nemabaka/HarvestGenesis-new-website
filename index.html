@@ -4,85 +4,80 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home | HarvestGenesis</title>
-
-  <!-- Vendor CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/bootstrap-icons.css" />
   <link rel="stylesheet" href="css/tooplate-kool-form-pack.css" />
-
   <style>
-    :root{
-      --hg-primary:#0097b2; /* dark turquoise */
-      --hg-dark:#000;
-      --hg-light:#fff;
+    :root {
+      --hg-primary: #0097b2;
+      --hg-dark: #000;
+      --hg-light: #fff;
     }
 
-    body{ padding-top:72px; }
+    body { padding-top:72px; background:var(--hg-primary); color:var(--hg-light); }
 
     /* Navbar */
-    .navbar{
-      background:var(--hg-primary) !important;
-    }
-    .navbar .nav-link{
-      color:var(--hg-light) !important;
-    }
+    .navbar { background: var(--hg-primary) !important; }
+    .navbar .nav-link { color: var(--hg-light) !important; }
     .navbar .nav-link:hover,
-    .navbar .nav-link.active{
-      text-decoration:underline;
-      font-weight:600;
-    }
-    .navbar-brand{ display:flex; align-items:center; gap:.5rem; }
-    .navbar-brand img{ height:40px; width:auto; }
-    .logo-text{ font-weight:800; letter-spacing:.3px; color:var(--hg-light); }
+    .navbar .nav-link.active { text-decoration: underline; font-weight: 600; }
+    .navbar-brand { display: flex; align-items: center; gap: .5rem; }
+    .navbar-brand img { height: 40px; width: auto; }
+    .logo-text { font-weight: 800; letter-spacing: .3px; color: var(--hg-light); }
 
-    /* Hero */
-    .hero{
-      position:relative;
-      background:var(--hg-dark);
-      color:var(--hg-light);
-      min-height:calc(100vh - 72px);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:72px 16px;
+    /* HERO with rotating Earth video */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--hg-light);
+      text-align: center;
     }
-    .hero h1{ font-weight:800; letter-spacing:.4px; margin-bottom:.6rem; }
-    .hero .lead{
-      color:var(--hg-light) !important;
-      opacity:1; 
-      font-size:1.1rem;
-      margin-bottom:1.25rem;
+    .hero video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
     }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.55);
+      z-index: 1;
+    }
+    .hero .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 { font-weight: 800; }
+    .hero p { font-size: 1.2rem; }
 
-    /* Section backgrounds */
-    section.turquoise{
-      background:var(--hg-primary);
-      color:var(--hg-light);
+    /* Features Section */
+    .feature-icon { font-size: 2.5rem; color: var(--hg-primary); }
+    .info-card {
+      border-radius: 1rem;
+      background: var(--hg-light);
+      color: var(--hg-dark);
+      padding: 2rem;
+      height: 100%;
+      box-shadow: 0 8px 25px rgba(0,0,0,.08);
     }
-
-    /* Section titles */
-    .section-title h2{ color:var(--hg-light); }
-
-    /* Feature cards */
-    .card-soft{ 
-      border-radius:1rem; 
-      box-shadow:0 10px 30px rgba(0,0,0,.06); 
-      background:var(--hg-light);
-      color:var(--hg-dark);
-    }
-    .feature-icon{ font-size:2rem; color:var(--hg-primary); }
 
     /* CTA */
-    .cta{ background:var(--hg-primary); color:var(--hg-light); }
+    .cta-section { background: var(--hg-primary); color: var(--hg-light); }
 
     /* Footer */
-    .footer{ background:var(--hg-dark); color:var(--hg-light); }
-    .footer a{ color:#fff; text-decoration:none; }
-    .footer a:hover{ text-decoration:underline; }
+    .footer { background: var(--hg-dark); color: var(--hg-light); }
+    .footer a { color: #fff; text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
   </style>
 </head>
-
 <body>
 
   <!-- NAVBAR -->
@@ -92,11 +87,9 @@
         <img src="images/logo.png" alt="HarvestGenesis logo" onerror="this.style.display='none'">
         <span class="logo-text">HarvestGenesis</span>
       </a>
-
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navHG">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navHG">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
@@ -111,78 +104,61 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO with rotating Earth video -->
   <section class="hero">
-    <div class="container">
-      <h1 class="display-5">Building Trust. Creating Futures.</h1>
-      <p class="lead">
-        From career services to branded apparel, HarvestGENESIS is your trusted partner for what’s next.
-      </p>
-      <div class="mt-2">
-        <a href="services.html" class="btn btn-light btn-lg">Explore Career Services</a>
-        <a href="shirts.html" class="btn btn-outline-light btn-lg">Explore Shirt Brands</a>
-      </div>
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="videos/video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-content container">
+      <h1 class="display-5 fw-bold">Building Trust. Creating Futures.</h1>
+      <p>From professional career services to branded apparel, we design solutions that inspire confidence.</p>
+      <a href="services.html" class="btn btn-primary btn-lg me-2">Explore Career Services</a>
+      <a href="services.html#shirts" class="btn btn-outline-light btn-lg">Explore Shirt Brands</a>
     </div>
   </section>
 
   <!-- WHAT WE OFFER -->
-  <section class="py-5 turquoise">
+  <section class="py-5">
     <div class="container">
-      <div class="section-title">
-        <h2 class="mb-0">What We Offer</h2>
-      </div>
-
       <div class="row g-4">
-        <div class="col-md-6 col-lg-3">
-          <div class="p-4 h-100 card-soft text-center">
+        <div class="col-md-4 text-center">
+          <div class="info-card">
             <div class="feature-icon mb-3"><i class="bi bi-file-earmark-person-fill"></i></div>
-            <h5 class="mb-1">Job-Ready Resumes</h5>
-            <p class="mb-0">ATS-friendly CVs & cover letters tailored to your target roles.</p>
+            <h5>Job-Ready Resumes</h5>
+            <p>ATS-friendly CVs tailored to your target role and industry.</p>
           </div>
         </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="p-4 h-100 card-soft text-center">
+        <div class="col-md-4 text-center">
+          <div class="info-card">
             <div class="feature-icon mb-3"><i class="bi bi-palette-fill"></i></div>
-            <h5 class="mb-1">Branding & Design</h5>
-            <p class="mb-0">Logos, flyers, posters, and web design that stand out.</p>
+            <h5>Impactful Branding</h5>
+            <p>Logos, flyers, posters and websites designed to impress.</p>
           </div>
         </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="p-4 h-100 card-soft text-center">
-            <div class="feature-icon mb-3"><i class="bi bi-mortarboard-fill"></i></div>
-            <h5 class="mb-1">Career & Academic Boost</h5>
-            <p class="mb-0">Applications, proofreading, and interview preparation.</p>
+        <div class="col-md-4 text-center">
+          <div class="info-card">
+            <div class="feature-icon mb-3"><i class="bi bi-bag-fill"></i></div>
+            <h5>Branded Shirts</h5>
+            <p>Exclusive apparel collections — <strong>70 Times 7</strong> and <strong>2 Fishes & 5 Loaves</strong>.</p>
           </div>
         </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="p-4 h-100 card-soft text-center">
-            <div class="feature-icon mb-3"><i class="bi bi-bag-heart-fill"></i></div>
-            <h5 class="mb-1">Faith-Inspired Shirt Brands</h5>
-            <p class="mb-0">“70 Times 7” & “2 Fishes & 5 Loaves” — wear your values proudly.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center mt-4">
-        <a href="shirts.html" class="btn btn-light btn-lg">Browse Shirt Collections</a>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-5 cta text-center">
+  <section class="cta-section py-5 text-center">
     <div class="container">
       <h3 class="mb-2">Ready to talk to us?</h3>
-      <p class="mb-4">We’re here to help—whether it’s careers, branding, or apparel.</p>
-      <a href="contact.html" class="btn btn-light btn-lg">Contact Us</a>
+      <p class="mb-4">Let’s craft the tools and brands that take you further.</p>
+      <a href="pricing.html" class="btn btn-light btn-lg me-2">View Pricing</a>
+      <a href="contact.html" class="btn btn-outline-light btn-lg">Talk to Us</a>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer mt-5">
     <div class="container py-5">
       <div class="row g-4">
         <div class="col-md-4">
@@ -210,11 +186,11 @@
     </div>
   </footer>
 
-  <!-- JS -->
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
